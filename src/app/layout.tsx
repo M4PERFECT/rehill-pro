@@ -19,15 +19,23 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body>
+        <header>
+          <nav>
+            <a href="/">Home</a> | 
+            <a href="/services">Services</a> | 
+            <a href="/contact">Contact</a>
+          </nav>
+        </header>
+        <main>{children}</main>
+        <footer>
+          <p>© 2025 Calgary Business</p>
+        </footer>
       </body>
     </html>
   );
